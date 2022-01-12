@@ -63,3 +63,17 @@ INSERT INTO Mannerism(text) VALUES ('Paces');
 INSERT INTO Mannerism(text) VALUES ('Taps fingers');
 INSERT INTO Mannerism(text) VALUES ('Bites fingernails');
 INSERT INTO Mannerism(text) VALUES ('Twirls hair or tugs beard');
+
+CREATE TABLE Interaction (id SERIAL PRIMARY KEY, text VARCHAR(255));
+INSERT INTO Interaction(text) VALUES ('Argumentative');
+INSERT INTO Interaction(text) VALUES ('Arrogant');
+INSERT INTO Interaction(text) VALUES ('Blustering');
+INSERT INTO Interaction(text) VALUES ('Rude');
+INSERT INTO Interaction(text) VALUES ('Curious');
+INSERT INTO Interaction(text) VALUES ('Friendly');
+INSERT INTO Interaction(text) VALUES ('Honest');
+INSERT INTO Interaction(text) VALUES ('Hot tempered');
+INSERT INTO Interaction(text) VALUES ('Irritable');
+INSERT INTO Interaction(text) VALUES ('Ponderous');
+INSERT INTO Interaction(text) VALUES ('Quiet');
+INSERT INTO Interaction(text) VALUES ('Suspicious');
