@@ -8,5 +8,5 @@ import com.dleinbach.npcprompt.mannerism.Mannerism;
 import com.dleinbach.npcprompt.talent.Talent;
 
 public record Npc(Appearance appearance, Ability highAbility, Ability lowAbility, Talent talent,
-                  Mannerism mannerisms, Interaction interaction, Ideal ideal, com.dleinbach.npcprompt.bond.Bond bond, String flaw) {
+                  Mannerism mannerisms, Interaction interaction, Ideal ideal, com.dleinbach.npcprompt.bond.Bond bond, com.dleinbach.npcprompt.flaw.Flaw flaw) {
 }

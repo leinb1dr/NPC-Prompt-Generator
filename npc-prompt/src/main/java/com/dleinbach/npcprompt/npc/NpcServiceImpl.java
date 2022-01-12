@@ -6,6 +6,8 @@ import com.dleinbach.npcprompt.appearance.Appearance;
 import com.dleinbach.npcprompt.appearance.AppearanceService;
 import com.dleinbach.npcprompt.bond.Bond;
 import com.dleinbach.npcprompt.bond.BondService;
+import com.dleinbach.npcprompt.flaw.Flaw;
+import com.dleinbach.npcprompt.flaw.FlawService;
 import com.dleinbach.npcprompt.ideal.Ideal;
 import com.dleinbach.npcprompt.ideal.IdealService;
 import com.dleinbach.npcprompt.interaction.Interaction;
@@ -21,16 +23,16 @@ import reactor.core.publisher.Mono;
 public record NpcServiceImpl(AppearanceService appearanceService, AbilityService abilityService,
                              TalentService talentService, MannerismService mannerismService,
                              InteractionService interactionService, IdealService idealService,
-                             BondService bondService) implements NpcService {
+                             BondService bondService, FlawService flawService) implements NpcService {
 
     @Override
     public Mono<Npc> getNpc() {
         return Mono.zip(attributes ->
                         new Npc((Appearance) attributes[0], (Ability) attributes[1], (Ability) attributes[2],
                                 (Talent) attributes[3], (Mannerism) attributes[4], (Interaction)attributes[5],
-                                (Ideal) attributes[6], (Bond)attributes[7], ""),
+                                (Ideal) attributes[6], (Bond)attributes[7], (Flaw)attributes[8]),
                 appearanceService.getAppearance(), abilityService.getAbility(), abilityService.getAbility(),
                 talentService.getTalent(), mannerismService.getMannerism(), interactionService.getInteraction(),
-                idealService.getIdeal(), bondService.getBond());
+                idealService.getIdeal(), bondService.getBond(), flawService.getFlaw());
     }
 }

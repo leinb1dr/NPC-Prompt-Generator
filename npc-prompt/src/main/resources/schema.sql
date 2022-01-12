@@ -127,3 +127,17 @@ INSERT INTO Bond(text) VALUES ('Protective of a sentimental keepsake');
 INSERT INTO Bond(text) VALUES ('Protective of a valuable possession');
 INSERT INTO Bond(text) VALUES ('Out for revenge');
 INSERT INTO Bond(text) VALUES ('Roll twice, ignoring results of 10');
+
+CREATE TABLE Flaw (id SERIAL PRIMARY KEY, text VARCHAR(255));
+INSERT INTO Flaw(text) VALUES ('Forbidden love or susceptibility to romance');
+INSERT INTO Flaw(text) VALUES ('Enjoys decadent pleasures');
+INSERT INTO Flaw(text) VALUES ('Arrogance');
+INSERT INTO Flaw(text) VALUES ('Envies another creature’s possessions or station');
+INSERT INTO Flaw(text) VALUES ('Overpowering greed');
+INSERT INTO Flaw(text) VALUES ('Prone to rage');
+INSERT INTO Flaw(text) VALUES ('Has a powerful enemy');
+INSERT INTO Flaw(text) VALUES ('Specific phobia');
+INSERT INTO Flaw(text) VALUES ('Shameful or scandalous history');
+INSERT INTO Flaw(text) VALUES ('Secret crime or misdeed');
+INSERT INTO Flaw(text) VALUES ('Possession of forbidden lore');
+INSERT INTO Flaw(text) VALUES ('Foolhardy bravery');
