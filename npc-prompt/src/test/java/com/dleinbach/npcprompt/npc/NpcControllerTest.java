@@ -34,7 +34,9 @@ public class NpcControllerTest extends NpcTestConfiguration {
                     assertThat(responseBody.mannerisms().text()).isNotEmpty();
                     assertThat(responseBody.interaction()).isNotNull();
                     assertThat(responseBody.interaction().text()).isNotEmpty();
-                    assertThat(responseBody.ideal()).isEmpty();
+                    assertThat(responseBody.ideal()).isNotNull();
+                    assertThat(responseBody.ideal().text()).isNotNull();
+                    assertThat(responseBody.ideal().alignment()).isNotNull();
                     assertThat(responseBody.bond()).isEmpty();
                     assertThat(responseBody.flaw()).isEmpty();
 
