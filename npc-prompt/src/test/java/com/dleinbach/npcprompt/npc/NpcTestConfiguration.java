@@ -5,6 +5,9 @@ import com.dleinbach.npcprompt.ability.AbilityServiceImpl;
 import com.dleinbach.npcprompt.appearance.AppearanceRepository;
 import com.dleinbach.npcprompt.appearance.AppearanceRepositoryMock;
 import com.dleinbach.npcprompt.appearance.AppearanceServiceImpl;
+import com.dleinbach.npcprompt.bond.BondRepository;
+import com.dleinbach.npcprompt.bond.BondRepositoryMock;
+import com.dleinbach.npcprompt.bond.BondServiceImpl;
 import com.dleinbach.npcprompt.ideal.IdealRepository;
 import com.dleinbach.npcprompt.ideal.IdealRepositoryMock;
 import com.dleinbach.npcprompt.ideal.IdealServiceImpl;
@@ -19,12 +22,11 @@ import com.dleinbach.npcprompt.talent.TalentRepositoryMock;
 import com.dleinbach.npcprompt.talent.TalentServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Import({NpcServiceImpl.class, AppearanceServiceImpl.class, AbilityServiceImpl.class,
         AbilityRepositoryImpl.class, TalentServiceImpl.class, MannerismServiceImpl.class,
-        InteractionServiceImpl.class, IdealServiceImpl.class})
+        InteractionServiceImpl.class, IdealServiceImpl.class, BondServiceImpl.class})
 public class NpcTestConfiguration {
     @MockBean
     MannerismRepository mannerismRepository;
@@ -36,6 +38,8 @@ public class NpcTestConfiguration {
     InteractionRepository interactionRepository;
     @MockBean
     IdealRepository idealRepository;
+    @MockBean
+    BondRepository bondRepository;
 
     @BeforeEach
     public void beforeEach(){
@@ -44,5 +48,6 @@ public class NpcTestConfiguration {
         MannerismRepositoryMock.MOCK(mannerismRepository);
         InteractionRepositoryMock.MOCK(interactionRepository);
         IdealRepositoryMock.MOCK(idealRepository);
+        BondRepositoryMock.MOCK(bondRepository);
     }
 }

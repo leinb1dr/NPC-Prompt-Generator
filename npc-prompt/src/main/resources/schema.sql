@@ -115,3 +115,15 @@ INSERT INTO Ideal(text, alignment) VALUES ('Glory', 'Other');
 INSERT INTO Ideal(text, alignment) VALUES ('Nation', 'Other');
 INSERT INTO Ideal(text, alignment) VALUES ('Redemption', 'Other');
 INSERT INTO Ideal(text, alignment) VALUES ('Self-knowledge', 'Other');
+
+CREATE TABLE Bond (id SERIAL PRIMARY KEY, text VARCHAR(255));
+INSERT INTO Bond(text) VALUES ('Dedicated to fulfilling a personal life goal');
+INSERT INTO Bond(text) VALUES ('Protective of close family members');
+INSERT INTO Bond(text) VALUES ('Protective of colleagues or compatriots');
+INSERT INTO Bond(text) VALUES ('Loyal to a benefactor, patron, or employer');
+INSERT INTO Bond(text) VALUES ('Captivated by a romantic interest');
+INSERT INTO Bond(text) VALUES ('Drawn to a special place');
+INSERT INTO Bond(text) VALUES ('Protective of a sentimental keepsake');
+INSERT INTO Bond(text) VALUES ('Protective of a valuable possession');
+INSERT INTO Bond(text) VALUES ('Out for revenge');
+INSERT INTO Bond(text) VALUES ('Roll twice, ignoring results of 10');

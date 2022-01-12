@@ -1,9 +1,5 @@
 package com.dleinbach.npcprompt.talent;
 
-import com.dleinbach.npcprompt.appearance.Appearance;
-import com.dleinbach.npcprompt.appearance.AppearanceRepository;
-import com.dleinbach.npcprompt.talent.Talent;
-import com.dleinbach.npcprompt.talent.TalentRepository;
 import org.assertj.core.util.Lists;
 import reactor.core.publisher.Flux;
 
