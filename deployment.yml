@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: npc-prompt-generator
+  namespace: npc
+  labels:
+    app: npc-svcs
+spec:
+  selector:
+    matchLabels:
+      app: npc-svcs
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: npc-svcs
+    spec:
+      containers:
+        - name: npc-prompt-generator
+          image: docker.io/leinb1dr/npc-prompt-generator:latest
+          ports:
+            - containerPort: 8080
