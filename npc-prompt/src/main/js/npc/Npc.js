@@ -1,31 +1,32 @@
-import React from 'react';
+import NpcAttribute from './NpcAttribute'
 
-class Npc extends React.Component {
+class Npc{
 
-    constructor(props) {
-        super(props);
-		this.state = {npc: {}};
-	}
-
-    componentDidMount() {
-        fetch('/npc').then(res => res.json())
-        .then(data=>this.setState({npc: data}));
+    constructor(appearance, highAbility, lowAbility, talent, mannerisms,
+                    interaction, ideal, bond, flaw){
+        this.talent = talent;
+        this.appearance = appearance;
+        this.highAbility = highAbility;
+        this.lowAbility = lowAbility;
+        this.mannerisms = mannerisms;
+        this.interaction = interaction;
+        this.ideal = ideal;
+        this.bond = bond;
+        this.flaw = flaw;
     }
 
-    render() {
-      return (
-      <div>
-        <div>Appearance: {this.state.npc.appearance && this.state.npc.appearance.text} </div>
-        <div>HighAbility: {this.state.npc.highAbility} </div>
-        <div>LowAbility: {this.state.npc.lowAbility} </div>
-        <div>Mannerism: {this.state.npc.mannerisms && this.state.npc.mannerisms.text} </div>
-        <div>Interaction: {this.state.npc.interaction && this.state.npc.interaction.text} </div>
-        <div>Ideal: {this.state.npc.ideal && this.state.npc.ideal.text} </div>
-        <div>Bond: {this.state.npc.bond && this.state.npc.bond.text} </div>
-        <div>Flaw: {this.state.npc.flaw && this.state.npc.flaw.text} </div>
-        </div>
-      );
+    static parse(npc){
+        return new Npc(NpcAttribute.parse(npc.appearance), new NpcAttribute(0, npc.highAbility), new NpcAttribute(0,npc.lowAbility),
+            NpcAttribute.parse(npc.talent), NpcAttribute.parse(npc.mannerisms), NpcAttribute.parse(npc.interaction),
+            NpcAttribute.parse(npc.ideal), NpcAttribute.parse(npc.bond), NpcAttribute.parse(npc.flaw));
     }
+
+    static empty(){
+        return new Npc(new NpcAttribute(),new NpcAttribute(),new NpcAttribute(),new NpcAttribute(),
+                       new NpcAttribute(),new NpcAttribute(),new NpcAttribute(),new NpcAttribute(),
+                       new NpcAttribute());
+    }
+
 }
 
-export default Npc
+export default Npc;
