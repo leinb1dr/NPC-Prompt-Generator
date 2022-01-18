@@ -31,17 +31,41 @@ class NpcView extends React.Component {
                 <Container sx={{p:1}}></Container>
 
                 <Typography color='primary.dark' variant="h4">Appearance</Typography>
-                <Typography label="body1">{this.props.npc.appearance.text}</Typography>
+                <NpcAttributeView
+                    label="Appearance"
+                    attribute={this.props.npc.appearance}
+                    value={this.state.npc.appearance.text}
+                    onChange={(event)=>{
+                        let npc = this.state.npc;
+                        npc.appearance.text=event.target.value;
+                        this.setState({npc:npc})
+                    }}></NpcAttributeView>
                 <Container sx={{p:1}}></Container>
 
                 <Typography color='primary.dark' variant="h4">Abilities</Typography>
                 <Grid container className="App">
                     <Grid item xs={6}>
-                        <NpcAttributeView label="High Ability" attribute={this.props.npc.highAbility}></NpcAttributeView>
+                        <NpcAttributeView
+                            label="High Ability"
+                            attribute={this.props.npc.highAbility}
+                            value={this.state.npc.highAbility.text}
+                            onChange={(event)=>{
+                                let npc = this.state.npc;
+                                npc.highAbility.text=event.target.value;
+                                this.setState({npc:npc})
+                            }}></NpcAttributeView>
                     </Grid>
                     <Grid item xs={6}>
-                        <NpcAttributeView label="Low Ability" attribute={this.props.npc.lowAbility}></NpcAttributeView>
-                    </Grid>
+                        <NpcAttributeView
+                            label="Low Ability"
+                            attribute={this.props.npc.lowAbility}
+                            value={this.state.npc.lowAbility.text}
+                            onChange={(event)=>{
+                                let npc = this.state.npc;
+                                npc.lowAbility.text=event.target.value;
+                                this.setState({npc:npc})
+                            }}></NpcAttributeView>
+                       </Grid>
                 </Grid>
                 <Container sx={{p:1}}></Container>
 
@@ -57,14 +81,53 @@ class NpcView extends React.Component {
                                 npc.talent.text=event.target.value;
                                 this.setState({npc:npc})
                             }}></NpcAttributeView>
-
-                        <NpcAttributeView label="Interaction" attribute={this.props.npc.interaction}></NpcAttributeView>
-                        <NpcAttributeView label="Mannerism" attribute={this.props.npc.mannerisms}></NpcAttributeView>
+                        <NpcAttributeView
+                            label="Interaction"
+                            attribute={this.props.npc.interaction}
+                            value={this.state.npc.interaction.text}
+                            onChange={(event)=>{
+                                let npc = this.state.npc;
+                                npc.interaction.text=event.target.value;
+                                this.setState({npc:npc})
+                            }}></NpcAttributeView>
+                        <NpcAttributeView
+                            label="Mannerism"
+                            attribute={this.props.npc.mannerisms}
+                            value={this.state.npc.mannerisms.text}
+                            onChange={(event)=>{
+                                let npc = this.state.npc;
+                                npc.mannerisms.text=event.target.value;
+                                this.setState({npc:npc})
+                            }}></NpcAttributeView>
                     </Grid>
                     <Grid item xs={6}>
-                        <NpcAttributeView label="Ideal" attribute={this.props.npc.ideal}></NpcAttributeView>
-                        <NpcAttributeView label="Bond" attribute={this.props.npc.bond}></NpcAttributeView>
-                        <NpcAttributeView label="Flaw" attribute={this.props.npc.flaw}></NpcAttributeView>
+                        <NpcAttributeView
+                            label="Ideal"
+                            attribute={this.props.npc.ideal}
+                            value={this.state.npc.ideal.text}
+                            onChange={(event)=>{
+                                let npc = this.state.npc;
+                                npc.ideal.text=event.target.value;
+                                this.setState({npc:npc})
+                            }}></NpcAttributeView>
+                        <NpcAttributeView
+                            label="Bond"
+                            attribute={this.props.npc.bond}
+                            value={this.state.npc.bond.text}
+                            onChange={(event)=>{
+                                let npc = this.state.npc;
+                                npc.bond.text=event.target.value;
+                                this.setState({npc:npc})
+                            }}></NpcAttributeView>
+                        <NpcAttributeView
+                            label="Flaw"
+                            attribute={this.props.npc.flaw}
+                            value={this.state.npc.flaw.text}
+                            onChange={(event)=>{
+                                let npc = this.state.npc;
+                                npc.flaw.text=event.target.value;
+                                this.setState({npc:npc})
+                            }}></NpcAttributeView>
                     </Grid>
                 </Grid>
 
@@ -77,15 +140,25 @@ class NpcView extends React.Component {
                 <Container sx={{p:1}}></Container>
 
                 <Typography color='primary.dark' variant="h4">Appearance</Typography>
+                <Typography variant="body1">{this.state.npc.appearance.text}</Typography>
+
                 <Container sx={{p:1}}></Container>
 
                 <Typography color='primary.dark' variant="h4">Abilities</Typography>
+                <Typography color='primary.dark' variant="h5">High Ability</Typography>
+                <Typography variant="body1">{this.state.npc.highAbility.text}</Typography>
+                <Typography color='primary.dark' variant="h5">Low Ability</Typography>
+                <Typography variant="body1">{this.state.npc.lowAbility.text}</Typography>
 
                 <Container sx={{p:1}}></Container>
 
                 <Typography color='primary.dark' variant="h4">Personality</Typography>
                 <Typography variant="body1">Talent: {this.state.npc.talent.text}</Typography>
-
+                <Typography variant="body1">Interaction: {this.state.npc.interaction.text}</Typography>
+                <Typography variant="body1">Mannerism: {this.state.npc.mannerisms.text}</Typography>
+                <Typography variant="body1">Ideal: {this.state.npc.ideal.text}</Typography>
+                <Typography variant="body1">Bond: {this.state.npc.bond.text}</Typography>
+                <Typography variant="body1">Flaw: {this.state.npc.flaw.text}</Typography>
 
             </Container>
         </TabPanel>
