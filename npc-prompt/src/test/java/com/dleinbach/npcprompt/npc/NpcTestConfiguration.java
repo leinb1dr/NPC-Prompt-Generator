@@ -21,6 +21,9 @@ import com.dleinbach.npcprompt.interaction.InteractionServiceImpl;
 import com.dleinbach.npcprompt.mannerism.MannerismRepository;
 import com.dleinbach.npcprompt.mannerism.MannerismRepositoryMock;
 import com.dleinbach.npcprompt.mannerism.MannerismServiceImpl;
+import com.dleinbach.npcprompt.race.RaceRepository;
+import com.dleinbach.npcprompt.race.RaceRepositoryMock;
+import com.dleinbach.npcprompt.race.RaceServiceImpl;
 import com.dleinbach.npcprompt.talent.TalentRepository;
 import com.dleinbach.npcprompt.talent.TalentRepositoryMock;
 import com.dleinbach.npcprompt.talent.TalentServiceImpl;
@@ -31,7 +34,7 @@ import org.springframework.context.annotation.Import;
 @Import({NpcServiceImpl.class, AppearanceServiceImpl.class, AbilityServiceImpl.class,
         AbilityRepositoryImpl.class, TalentServiceImpl.class, MannerismServiceImpl.class,
         InteractionServiceImpl.class, IdealServiceImpl.class, BondServiceImpl.class,
-        FlawServiceImpl.class})
+        FlawServiceImpl.class, RaceServiceImpl.class})
 public class NpcTestConfiguration {
     @MockBean
     MannerismRepository mannerismRepository;
@@ -47,6 +50,8 @@ public class NpcTestConfiguration {
     BondRepository bondRepository;
     @MockBean
     FlawRepository flawRepository;
+    @MockBean
+    RaceRepository raceRepository;
 
     @BeforeEach
     public void beforeEach(){
@@ -57,5 +62,6 @@ public class NpcTestConfiguration {
         IdealRepositoryMock.MOCK(idealRepository);
         BondRepositoryMock.MOCK(bondRepository);
         FlawRepositoryMock.MOCK(flawRepository);
+        RaceRepositoryMock.MOCK(raceRepository);
     }
 }

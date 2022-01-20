@@ -35,6 +35,7 @@ class NpcServiceImplTest extends NpcTestConfiguration{
                     assertThat(actualNpc.bond().text()).isNotEmpty();
                     assertThat(actualNpc.flaw()).isNotNull();
                     assertThat(actualNpc.flaw().text()).isNotEmpty();
+                    assertThat(actualNpc.race()).isNotNull();
                     return true;
                 })
                 .verifyComplete();

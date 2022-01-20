@@ -14,6 +14,8 @@ import com.dleinbach.npcprompt.interaction.Interaction;
 import com.dleinbach.npcprompt.interaction.InteractionService;
 import com.dleinbach.npcprompt.mannerism.Mannerism;
 import com.dleinbach.npcprompt.mannerism.MannerismService;
+import com.dleinbach.npcprompt.race.Race;
+import com.dleinbach.npcprompt.race.RaceService;
 import com.dleinbach.npcprompt.talent.Talent;
 import com.dleinbach.npcprompt.talent.TalentService;
 import org.springframework.stereotype.Service;
@@ -23,16 +25,16 @@ import reactor.core.publisher.Mono;
 public record NpcServiceImpl(AppearanceService appearanceService, AbilityService abilityService,
                              TalentService talentService, MannerismService mannerismService,
                              InteractionService interactionService, IdealService idealService,
-                             BondService bondService, FlawService flawService) implements NpcService {
+                             BondService bondService, FlawService flawService, RaceService raceService) implements NpcService {
 
     @Override
     public Mono<Npc> getNpc() {
         return Mono.zip(attributes ->
                         new Npc((Appearance) attributes[0], (Ability) attributes[1], (Ability) attributes[2],
                                 (Talent) attributes[3], (Mannerism) attributes[4], (Interaction)attributes[5],
-                                (Ideal) attributes[6], (Bond)attributes[7], (Flaw)attributes[8]),
+                                (Ideal) attributes[6], (Bond)attributes[7], (Flaw)attributes[8], (Race)attributes[9]),
                 appearanceService.getAppearance(), abilityService.getAbility(), abilityService.getAbility(),
                 talentService.getTalent(), mannerismService.getMannerism(), interactionService.getInteraction(),
-                idealService.getIdeal(), bondService.getBond(), flawService.getFlaw());
+                idealService.getIdeal(), bondService.getBond(), flawService.getFlaw(), raceService.getRace());
     }
 }
