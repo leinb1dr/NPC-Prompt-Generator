@@ -142,5 +142,5 @@ INSERT INTO Flaw(text) VALUES ('Secret crime or misdeed');
 INSERT INTO Flaw(text) VALUES ('Possession of forbidden lore');
 INSERT INTO Flaw(text) VALUES ('Foolhardy bravery');
 
-CREATE TABLE Race (id SERIAL PRIMARY KEY, age_Formula VARCHAR(255), weight_Formula VARCHAR(255), height_Formula VARCHAR(255), character_Size VARCHAR(255));
-INSERT INTO Race(age_Formula, weight_Formula, height_Formula, character_Size) VALUES ('3d27','9d20+160','8d6+50' ,'medium');
+CREATE TABLE Race (id SERIAL PRIMARY KEY, name VARCHAR(255), age_Formula VARCHAR(255), weight_Formula VARCHAR(255), height_Formula VARCHAR(255), character_Size VARCHAR(255));
+INSERT INTO Race(name, age_Formula, weight_Formula, height_Formula, character_Size) VALUES ('Dragonborn', '3d27','9d20+160','8d6+50' ,'medium');

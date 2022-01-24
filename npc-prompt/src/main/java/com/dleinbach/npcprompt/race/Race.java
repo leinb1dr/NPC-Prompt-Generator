@@ -6,21 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.Id;
 
 // Dragonborn x,9d20+160,3d27,medium
-public record Race(@Id Long id, String ageFormula, String weightFormula, String heightFormula, String characterSize) {
-//    @Transient
-//    private DiceParser age = null;
-//    @Transient
-//    private DiceParser weight = null;
-//    @Transient
-//    private DiceParser height = null;
-
-//    public Race(){
-//        this.id = 0L;
-//        this.ageFormula = "";
-//        this.weightFormula = "";
-//        this.characterSize = "";
-//        this.heightFormula = "";
-//    }
+public record Race(@Id Long id, String name, String ageFormula, String weightFormula, String heightFormula, String characterSize) {
 
     @JsonProperty("age")
     public int getAge(){

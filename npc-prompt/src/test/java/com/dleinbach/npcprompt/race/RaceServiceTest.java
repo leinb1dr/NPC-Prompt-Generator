@@ -30,7 +30,7 @@ public class RaceServiceTest {
     public void getRace() {
         var appearance = service.getRace();
         StepVerifier.create(appearance)
-                .expectNext(new Race(1L, "3d27","9d20+160", "8d6+50", "medium"))
+                .expectNext(new Race(1L, "Dragonborn", "3d27","9d20+160", "8d6+50", "medium"))
                 .verifyComplete();
     }
 
@@ -40,8 +40,8 @@ public class RaceServiceTest {
         StepVerifier.create(appearance)
                 .consumeNextWith(race -> {
                     assertThat(race.getAge()).isBetween(3,81).describedAs("Age");
-//                    assertThat(race.getWeight()).isBetween(169,340).describedAs("Weight");
-//                    assertThat(race.getHeight()).isBetween(58,98).describedAs("Height");
+                    assertThat(race.getWeight()).isBetween(169,340).describedAs("Weight");
+                    assertThat(race.getHeight()).isBetween(58,98).describedAs("Height");
                 })
                 .verifyComplete();
     }

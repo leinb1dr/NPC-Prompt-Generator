@@ -8,7 +8,7 @@ class NpcView extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {tabIndex: 0, npc: Npc.empty()};
+        this.state = {tabIndex: 0, npc: props.npc};
 	}
 
 	handleChange = (event, newValue)=>{
@@ -140,6 +140,8 @@ class NpcView extends React.Component {
                 <Container sx={{p:1}}></Container>
 
                 <Typography color='primary.dark' variant="h4">Appearance</Typography>
+                {this.props.npc.race?<Typography variant="body1">The {this.props.npc.race.name} is {this.props.npc.race.age} years old</Typography>:null}
+                {this.props.npc.race?<Typography variant="body1">The {this.props.npc.race.name} is {this.props.npc.race.height} feet tall and weighs {this.props.npc.race.weight}</Typography>:null}
                 <Typography variant="body1">{this.state.npc.appearance.text}</Typography>
 
                 <Container sx={{p:1}}></Container>

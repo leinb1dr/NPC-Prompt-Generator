@@ -3,6 +3,7 @@ import NpcView from './NpcView';
 import NpcViewModel from './NpcViewModel';
 import Npc from './Npc';
 import NpcAttribute from './NpcAttribute';
+import Race from './Race';
 import { Subscriber, Observable } from 'rxjs';
 import EventBus from '../eventBus/EventBus';
 
@@ -12,7 +13,7 @@ class NpcController extends React.Component {
         super(props);
         this.state = {npc: new Npc(new NpcAttribute(),new NpcAttribute(),new NpcAttribute(),new NpcAttribute(),
                                     new NpcAttribute(),new NpcAttribute(),new NpcAttribute(),new NpcAttribute(),
-                                    new NpcAttribute())};
+                                    new NpcAttribute(), new Race())};
         NpcViewModel.getInstance()
     }
 
