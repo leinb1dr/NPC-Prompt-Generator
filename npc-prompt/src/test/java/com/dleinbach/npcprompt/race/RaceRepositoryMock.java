@@ -1,5 +1,8 @@
 package com.dleinbach.npcprompt.race;
 
+import com.dleinbach.npcprompt.race.age.RaceAge;
+import com.dleinbach.npcprompt.race.main.Race;
+import com.dleinbach.npcprompt.race.main.RaceRepository;
 import org.assertj.core.util.Lists;
 import reactor.core.publisher.Flux;
 
@@ -9,7 +12,6 @@ public class RaceRepositoryMock {
 
     public static void MOCK(RaceRepository repository){
         when(repository.findAll())
-                .thenReturn(Flux.fromIterable(Lists.newArrayList(new Race(1L, "Dragonborn", "3d27",
-                        "9d20+160", "8d6+50", "medium"))));
+                .thenReturn(Flux.fromIterable(Lists.newArrayList(new Race(1L, "Dragonborn", null, "medium"))));
     }
 }

@@ -7,7 +7,7 @@ import com.dleinbach.npcprompt.flaw.Flaw;
 import com.dleinbach.npcprompt.ideal.Ideal;
 import com.dleinbach.npcprompt.interaction.Interaction;
 import com.dleinbach.npcprompt.mannerism.Mannerism;
-import com.dleinbach.npcprompt.race.Race;
+import com.dleinbach.npcprompt.race.main.Race;
 import com.dleinbach.npcprompt.talent.Talent;
 
 public record Npc(Appearance appearance, Ability highAbility, Ability lowAbility, Talent talent,

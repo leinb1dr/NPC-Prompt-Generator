@@ -144,3 +144,12 @@ INSERT INTO Flaw(text) VALUES ('Foolhardy bravery');
 
 CREATE TABLE Race (id SERIAL PRIMARY KEY, name VARCHAR(255), age_Formula VARCHAR(255), weight_Formula VARCHAR(255), height_Formula VARCHAR(255), character_Size VARCHAR(255));
 INSERT INTO Race(name, age_Formula, weight_Formula, height_Formula, character_Size) VALUES ('Dragonborn', '3d27','9d20+160','8d6+50' ,'medium');
+
+CREATE TABLE Race_Age(id SERIAL PRIMARY KEY, race_id INT, stage VARCHAR(255), age_range VARCHAR(255), bucket_start FLOAT, bucket_end FLOAT,
+foreign key (race_id) references Race(id));
+INSERT INTO Race_Age(stage, race_id, age_range, bucket_start, bucket_end) VALUES ('Child', 1, '0-3', 0, 4);
+INSERT INTO Race_Age(stage, race_id, age_range, bucket_start, bucket_end) VALUES ('Young Adult', 1, '4-15', 5, 17);
+INSERT INTO Race_Age(stage, race_id, age_range, bucket_start, bucket_end) VALUES ('Adult', 1, '15-45', 18, 54);
+INSERT INTO Race_Age(stage, race_id, age_range, bucket_start, bucket_end) VALUES ('Middle Aged', 1, '45-65', 55, 78);
+INSERT INTO Race_Age(stage, race_id, age_range, bucket_start, bucket_end) VALUES ('Old', 1, '65-80', 79, 96);
+INSERT INTO Race_Age(stage, race_id, age_range, bucket_start, bucket_end) VALUES ('Ancient', 1, '80+', 97, 100);

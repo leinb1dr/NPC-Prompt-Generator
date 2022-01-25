@@ -1,4 +1,4 @@
-package com.dleinbach.npcprompt.race;
+package com.dleinbach.npcprompt.race.main;
 
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 

@@ -10,7 +10,6 @@ import com.dleinbach.npcprompt.bond.BondRepositoryMock;
 import com.dleinbach.npcprompt.bond.BondServiceImpl;
 import com.dleinbach.npcprompt.flaw.FlawRepository;
 import com.dleinbach.npcprompt.flaw.FlawRepositoryMock;
-import com.dleinbach.npcprompt.flaw.FlawService;
 import com.dleinbach.npcprompt.flaw.FlawServiceImpl;
 import com.dleinbach.npcprompt.ideal.IdealRepository;
 import com.dleinbach.npcprompt.ideal.IdealRepositoryMock;
@@ -21,7 +20,9 @@ import com.dleinbach.npcprompt.interaction.InteractionServiceImpl;
 import com.dleinbach.npcprompt.mannerism.MannerismRepository;
 import com.dleinbach.npcprompt.mannerism.MannerismRepositoryMock;
 import com.dleinbach.npcprompt.mannerism.MannerismServiceImpl;
-import com.dleinbach.npcprompt.race.RaceRepository;
+import com.dleinbach.npcprompt.race.RaceAgeRepositoryMock;
+import com.dleinbach.npcprompt.race.age.RaceAgeRepository;
+import com.dleinbach.npcprompt.race.main.RaceRepository;
 import com.dleinbach.npcprompt.race.RaceRepositoryMock;
 import com.dleinbach.npcprompt.race.RaceServiceImpl;
 import com.dleinbach.npcprompt.talent.TalentRepository;
@@ -36,6 +37,8 @@ import org.springframework.context.annotation.Import;
         InteractionServiceImpl.class, IdealServiceImpl.class, BondServiceImpl.class,
         FlawServiceImpl.class, RaceServiceImpl.class})
 public class NpcTestConfiguration {
+    @MockBean
+    RaceAgeRepository raceAgeRepository;
     @MockBean
     MannerismRepository mannerismRepository;
     @MockBean
@@ -63,5 +66,6 @@ public class NpcTestConfiguration {
         BondRepositoryMock.MOCK(bondRepository);
         FlawRepositoryMock.MOCK(flawRepository);
         RaceRepositoryMock.MOCK(raceRepository);
+        RaceAgeRepositoryMock.MOCK(raceAgeRepository);
     }
 }

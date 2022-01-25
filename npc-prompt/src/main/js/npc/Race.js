@@ -1,20 +1,15 @@
+import Age from './Age'
 
 class Race {
-    constructor(id, name, ageFormula, weightFormula, heightFormula, age, height, weight){
+    constructor(id, name, age){
         this.id = id;
         this.name = name;
-        this.ageFormula = ageFormula;
-        this.weightFormula = weightFormula;
-        this.heightFormula = heightFormula;
         this.age = age;
-        this.height = height;
-        this.weight = weight;
     }
     
     static parse(race){
-            return new Race(race.id, race.name, race.ageFormula, race.weightFormula, race.heightFormula,
-                race.age, race.height, race.weight);
-        }
+        return new Race(race.id, race.name, Age.parse(race.raceAge));
+    }
 }
 
 export default Race;

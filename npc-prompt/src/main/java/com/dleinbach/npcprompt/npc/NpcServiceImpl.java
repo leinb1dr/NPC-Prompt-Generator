@@ -14,7 +14,7 @@ import com.dleinbach.npcprompt.interaction.Interaction;
 import com.dleinbach.npcprompt.interaction.InteractionService;
 import com.dleinbach.npcprompt.mannerism.Mannerism;
 import com.dleinbach.npcprompt.mannerism.MannerismService;
-import com.dleinbach.npcprompt.race.Race;
+import com.dleinbach.npcprompt.race.main.Race;
 import com.dleinbach.npcprompt.race.RaceService;
 import com.dleinbach.npcprompt.talent.Talent;
 import com.dleinbach.npcprompt.talent.TalentService;
